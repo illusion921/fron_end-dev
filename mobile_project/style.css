@@ -24,6 +24,7 @@ html,body {
 
 #rlist {
 	background: orange;
+	height: auto;
 }
 #search {
 	background: blue;

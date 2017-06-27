@@ -22,7 +22,13 @@ var prePage = null;
 var currentPage = null;
 function routeControll(){
 	var hKey = location.hash.slice(1) || 'address';
-	var page = hashModuleMap[hKey];
+	
+	var hash = hKey;
+	if(hKey.indexOf('rlist') !== -1){
+		hash = 'rlist';
+		hashModuleMap[hash].loadList(hKey);
+	}
+	var page = hashModuleMap[hash];
 	prePage = currentPage;
 	currentPage = page;	//将当前页面的map关系保存下来，当下一个特面切换时，将值赋给prePage
 	if (prePage) {

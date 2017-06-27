@@ -1,13 +1,16 @@
 function debounce(func,wait){
-	var timeId = null;
+	var timeId = null;    //将timeId设为null
+	//产生一个闭包
 	return function(){
 		console.log(this);
-		var _self = this;
+		var _self = this;   //将当前调用对象保存在_self中  $('#address_search')
 
-		clearTimeout(timeId);
+		clearTimeout(timeId);  //每当input发生变化时，调用debounce函数，执行到此处的时候，将timeId置为空
 		timeId = setTimeout(function(){
-			func.call(_self);
-		},wait || 300);
+			func.call(_self);  //调用某一个对象的方法，替换当前的方法，这里是指将当前this指向替换为_self
+			//apply(thisObj[, argArray])  两个参数，第一个参数是必需的，第二个参数为传入方法的参数，一个参数也必须写成数组的形式
+			//call(thisObj[, arg1[, arg2[, [,...argN]]]]) call传入的方法参数可以为多个，var a1 = add.call(sub,4,2);
+		},wait || 300);   //每隔300毫秒，执行一次函数func
 	}
 };
 var addressModule = {
