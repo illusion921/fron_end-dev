@@ -33,7 +33,7 @@ var addressModule = {
 				},
 				success: function(rev){
 					for(i=0;i<rev.length;i++){
-						addressList += "<li>" + rev[i].name + "</li>";
+						addressList +=`<li><a href="#rlist-${rev[i].latitude}-${rev[i].longitude}">${rev[i].name}</a></li>`;
 					}
 					$('#address_list').html(addressList);
 				},
@@ -59,7 +59,7 @@ var addressModule = {
 				success: function(rev){
 					var addressList = '';
 					for(i=0;i<rev.length;i++){
-						addressList += "<li>" + rev[i].name + "</li>";
+						addressList += `<li><a href="#rlist-${rev[i].latitude}-${rev[i].longitude}">${rev[i].name}</a></li>`;
 					}
 					$('#address_list').html(addressList);
 				},

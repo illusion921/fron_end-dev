@@ -11,15 +11,15 @@ html,body {
 	line-height: 50px;
 	font-size: 16px;
 	font-weight: bold;
-	#color: white;
+	/*color: white;*/
 	text-align: center;
 	display: none;
 }
 .menu a {
-	color: white;
+	/*color: white;*/
 }
 #address {
-	#background: black;
+	/*background: black;*/
 }
 
 #rlist {
